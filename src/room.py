@@ -6,6 +6,7 @@ class Room:
         self.room_name = room_name
         self.room_price = room_price
         self.playlist = []
+        self.tab = 0
 
     def check_in_guest(self, person):
         if len(self.guests) < self.capacity:
@@ -33,6 +34,13 @@ class Room:
             song = self.get_song_by_name(guest.fav_song)
             if song != None:
                 self.playlist.append(song)
+
+    def add_to_tab(self, amount):
+        self.tab += amount
+
+
+    
+
         
         
         
