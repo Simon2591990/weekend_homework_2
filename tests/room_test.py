@@ -1,12 +1,13 @@
 import unittest
 from src.room import Room
 from src.guest import Guest
+from src.song import Song
 
 class TestRoom(unittest.TestCase):
     def setUp(self):
-        person_1 = Guest("Songy McSongface", 36)
-        person_2 = Guest("Singy McSingface", 34)
-        party = [person_1, person_2]
+        self.person_1 = Guest("Songy McSongface", 36)
+        self.person_2 = Guest("Singy McSingface", 34)
+        self.song_1 = Song("Never Gonna Give You Up", "Rick Astley", "Pop")
         self.room = Room("Room 1", 5)
 
     def test_room_capacity(self):
@@ -14,6 +15,12 @@ class TestRoom(unittest.TestCase):
     
     def test_room_name(self):
         self.assertEqual("Room 1", self.room.room_name)
+
+    def test_check_in_guest(self):
+        self.room.check_in_guest(self.person_1)
+        self.assertEqual("Songy McSongface", self.room.guests[0].name)
+
+    
 
 
     
