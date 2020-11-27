@@ -5,7 +5,7 @@ from src.song import Song
 
 class TestRoom(unittest.TestCase):
     def setUp(self):
-        self.person_1 = Guest("Songy McSongface", 36, 50, "Never Gonna Give You Up")
+        self.person_1 = Guest("Singy McSingface", 36, 50, "Never Gonna Give You Up")
         self.song_1 = Song("Never Gonna Give You Up", "Rick Astley", "Pop")
         self.room = Room("Room 1", 5, 10)
 
@@ -17,7 +17,7 @@ class TestRoom(unittest.TestCase):
 
     def test_check_in_guest(self):
         self.room.check_in_guest(self.person_1)
-        self.assertEqual("Songy McSongface", self.room.guests[0].name)
+        self.assertEqual("Singy McSingface", self.room.guests[0].name)
 
     def test_check_out_guest(self):
         self.room.check_in_guest(self.person_1)
@@ -50,8 +50,8 @@ class TestRoom(unittest.TestCase):
         self.room.check_in_guest(self.person_1)
         self.assertEqual(40, self.person_1.cash)
 
-    def test_play_song__title_anouncment(self):
-        self.assertEqual("Next up we have Never Gonna Give You Up", self.room.play_song(self.song_1))
+    def test_play_song__title_and_artist(self):
+        self.assertEqual("Next up we have Singy McSingface with Never Gonna Give You Up by Rick Astley", self.room.play_song(self.song_1, self.person_1))
 
 
 
