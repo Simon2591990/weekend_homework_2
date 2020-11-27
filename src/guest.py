@@ -7,4 +7,4 @@ class Guest:
         self.fav_drink = fav_drink
 
     def remove_cash(self, amount):
-        self. cash -= amount
+        self.cash -= amount

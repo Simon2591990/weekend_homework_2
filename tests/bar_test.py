@@ -15,3 +15,6 @@ class TestBar(unittest.TestCase):
     def test_get_drink_cost(self):
         self.assertEqual(4, self.bar.drinks["Beer"])
 
+
+        
+

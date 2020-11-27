@@ -81,6 +81,9 @@ class TestRoom(unittest.TestCase):
         self.room.add_fav_songs_to_playlist()
         self.assertEqual(1, len(self.room.playlist))
     
+    def test_customer_buys_drink(self):
+        self.bar.customer_buys_drink(self.person_1)
+        self.assertEqual(46, self.person_1.cash)
     
         
 

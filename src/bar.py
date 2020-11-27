@@ -4,12 +4,7 @@ class Bar:
         self.name = name
         self.till = till
         self.drinks = drinks
-        
-        
-
-    def get_drink_by_name(self, drink_name):
-        for drink in self.drinks:
-            if drink.name == drink_name:
-                return drink
     
-    
+    def customer_buys_drink(self, person):
+            cost = self.drinks[person.fav_drink]
+            person.cash -= cost
