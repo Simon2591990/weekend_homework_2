@@ -31,7 +31,8 @@ class Room:
     def add_fav_songs_to_playlist(self):
         for guest in self.guests:
             song = self.get_song_by_name(guest.fav_song)
-            self.playlist.append(song)
+            if song != None:
+                self.playlist.append(song)
         
         
 

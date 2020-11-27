@@ -73,8 +73,8 @@ class TestRoom(unittest.TestCase):
         self.room.check_in_guest(self.person_1)
         self.room.check_in_guest(self.person_2)
         self.room.add_fav_songs_to_playlist()
-        self.assertEqual(2, len(self.room.playlist))
-        print(self.room.playlist)
+        self.assertEqual(1, len(self.room.playlist))
+        
 
 
       
