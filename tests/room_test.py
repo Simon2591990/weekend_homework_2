@@ -3,6 +3,7 @@ from src.room import Room
 from src.guest import Guest
 from src.song import Song
 
+
 class TestRoom(unittest.TestCase):
     def setUp(self):
         self.person_1 = Guest("Singy McSingface", 36, 50, "Never Gonna Give You Up")
@@ -10,6 +11,8 @@ class TestRoom(unittest.TestCase):
         self.song_1 = Song("Never Gonna Give You Up", "Rick Astley", "Pop")
         self.song_2 = Song("Sandstorm", "Darude", "Dance")
         self.room = Room("Room 1", 5, 10)
+        
+        
 
     def test_room_capacity(self):
         self.assertEqual(5, self.room.capacity)
@@ -74,6 +77,8 @@ class TestRoom(unittest.TestCase):
         self.room.check_in_guest(self.person_2)
         self.room.add_fav_songs_to_playlist()
         self.assertEqual(1, len(self.room.playlist))
+    
+    
         
 
 
