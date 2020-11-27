@@ -24,6 +24,11 @@ class TestRoom(unittest.TestCase):
         self.room.check_in_guest(self.person_1)
         self.room.check_out_guest(self.person_1)
         self.assertEqual([], self.room.guests)
+    
+    def test_add_song(self):
+        self.room.add_song(self.song_1)
+        self.assertEqual("Never Gonna Give You Up", self.room.songs[0].name)
+
         
 
     
