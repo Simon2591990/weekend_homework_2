@@ -5,6 +5,7 @@ class Room:
         self.capacity = capacity
         self.room_name = room_name
         self.room_price = room_price
+        self.playlist = []
 
     def check_in_guest(self, person):
         if len(self.guests) < self.capacity:
@@ -26,5 +27,14 @@ class Room:
         for song in self.songs:
             if song.name == song_name:
                 return song
+
+    def add_fav_songs_to_playlist(self):
+        for guest in self.guests:
+            song = self.get_song_by_name(guest.fav_song)
+            self.playlist.append(song)
+        
+        
+
+
 
 
