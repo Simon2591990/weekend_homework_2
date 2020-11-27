@@ -29,6 +29,16 @@ class TestRoom(unittest.TestCase):
         self.room.add_song(self.song_1)
         self.assertEqual("Never Gonna Give You Up", self.room.songs[0].name)
 
+    def test_check_in_guest__reached_capacity(self):
+        self.room.check_in_guest(self.person_1)
+        self.room.check_in_guest(self.person_1)
+        self.room.check_in_guest(self.person_1)
+        self.room.check_in_guest(self.person_1)
+        self.room.check_in_guest(self.person_1)
+        self.room.check_in_guest(self.person_1)
+        self.assertEqual(5, len(self.room.guests))
+
+
         
 
     

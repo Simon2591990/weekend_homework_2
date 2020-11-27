@@ -6,7 +6,10 @@ class Room:
         self.room_name = room_name
 
     def check_in_guest(self, person):
-        self.guests.append(person)
+        if len(self.guests) < self.capacity:
+            self.guests.append(person)
+        else:
+            return "Sorry, room is full"
 
     def check_out_guest(self, person):
         self.guests.remove(person)
