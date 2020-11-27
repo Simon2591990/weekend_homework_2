@@ -18,3 +18,7 @@ class Room:
 
     def add_song(self, song):
         self.songs.append(song)
+
+    def play_song(self, song):
+        return f"Next up we have {song.name}"
+
