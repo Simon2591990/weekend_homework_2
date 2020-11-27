@@ -9,4 +9,10 @@ class TestRoom(unittest.TestCase):
         party = [person_1, person_2]
         self.room = Room(party, 5)
 
+    def test_room_capacity(self):
+        self.assertEqual(5, self.room.capacity)
+
+
+    
+
         
