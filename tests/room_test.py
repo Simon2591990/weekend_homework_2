@@ -51,7 +51,16 @@ class TestRoom(unittest.TestCase):
         self.assertEqual(40, self.person_1.cash)
 
     def test_play_song__title_and_artist(self):
-        self.assertEqual("Next up we have Singy McSingface with Never Gonna Give You Up by Rick Astley", self.room.play_song(self.song_1, self.person_1))
+        self.assertEqual("Next up we have Singy McSingface with Never Gonna Give You Up by Rick Astley", 
+        self.room.play_song(self.song_1, self.person_1))
+
+    def test_get_song_by_name(self):
+        self.room.add_song(self.song_1)
+        self.assertEqual(self.song_1, self.room.get_song_by_name("Never Gonna Give You Up"))
+
+
+
+    
 
 
 

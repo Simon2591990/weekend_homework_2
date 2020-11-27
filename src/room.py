@@ -22,3 +22,9 @@ class Room:
     def play_song(self, song, person):
         return f"Next up we have {person.name} with {song.name} by {song.artist}"
 
+    def get_song_by_name(self, song_name):
+        for song in self.songs:
+            if song.name == song_name:
+                return song
+
+
