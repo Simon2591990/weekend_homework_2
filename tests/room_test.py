@@ -5,8 +5,8 @@ from src.song import Song
 
 class TestRoom(unittest.TestCase):
     def setUp(self):
-        self.person_1 = Guest("Songy McSongface", 36)
-        self.person_2 = Guest("Singy McSingface", 34)
+        self.person_1 = Guest("Songy McSongface", 36, 50)
+        self.person_2 = Guest("Singy McSingface", 34, 45)
         self.song_1 = Song("Never Gonna Give You Up", "Rick Astley", "Pop")
         self.room = Room("Room 1", 5)
 
@@ -37,6 +37,16 @@ class TestRoom(unittest.TestCase):
         self.room.check_in_guest(self.person_1)
         self.room.check_in_guest(self.person_1)
         self.assertEqual(5, len(self.room.guests))
+
+    def test_check_in_guest__returns_string(self):
+        self.room.check_in_guest(self.person_1)
+        self.room.check_in_guest(self.person_1)
+        self.room.check_in_guest(self.person_1)
+        self.room.check_in_guest(self.person_1)
+        self.room.check_in_guest(self.person_1)
+        self.room.check_in_guest(self.person_1)
+        self.assertEqual("Sorry, room is full", self.room.check_in_guest(self.person_1) )
+
 
 
         
