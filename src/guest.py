@@ -3,3 +3,6 @@ class Guest:
         self.name = name
         self.age = age
         self.cash = cash
+
+    def remove_cash(self, amount):
+        self. cash -= amount
