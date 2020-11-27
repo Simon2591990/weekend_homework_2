@@ -2,15 +2,18 @@ import unittest
 from src.room import Room
 from src.guest import Guest
 from src.song import Song
+from src.bar import Bar
 
 
 class TestRoom(unittest.TestCase):
     def setUp(self):
-        self.person_1 = Guest("Singy McSingface", 36, 50, "Never Gonna Give You Up")
-        self.person_2 = Guest("Dancy McDanceface", 30, 60, "Sandstorm")
+        self.person_1 = Guest("Singy McSingface", 36, 50, "Never Gonna Give You Up", "Beer")
+        self.person_2 = Guest("Dancy McDanceface", 30, 60, "Sandstorm", "Wine")
         self.song_1 = Song("Never Gonna Give You Up", "Rick Astley", "Pop")
         self.song_2 = Song("Sandstorm", "Darude", "Dance")
         self.room = Room("Room 1", 5, 10)
+        drinks = {"Beer": 4, "Wine": 8, "Whiskey": 5, "Vodka": 2}
+        self.bar = Bar("Karaoke Bar", 100, drinks)
         
         
 
