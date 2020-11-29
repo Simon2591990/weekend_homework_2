@@ -89,7 +89,15 @@ class TestRoom(unittest.TestCase):
         self.bar.customer_buys_drink_add_to_tab(self.room, self.person_1)
         self.assertEqual(4,  self.room.tab)
 
-    
+    def test_split_tab(self):
+        self.room.check_in_guest(self.person_1)
+        self.room.check_in_guest(self.person_2)
+        self.bar.customer_buys_drink_add_to_tab(self.room, self.person_1)
+        self.bar.customer_buys_drink_add_to_tab(self.room, self.person_2)
+        self.room.split_tab()
+        self.assertEqual(0 ,self.room.tab)
+        self.assertEqual(34, self.person_1.cash)
+        self.assertEqual(44, self.person_2.cash)
         
 
 

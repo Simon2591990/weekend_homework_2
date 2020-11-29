@@ -38,6 +38,12 @@ class Room:
     def add_to_tab(self, amount):
         self.tab += amount
 
+    def split_tab(self):
+        share_of_bill = self.tab / len(self.guests)
+        for guest in self.guests:
+            guest.remove_cash(share_of_bill)
+        self.tab = 0
+
 
     
 
